@@ -1,6 +1,7 @@
 import flask
 import time
 import json
+import os
 
 # Initialize
 jsoncache = {}
@@ -67,7 +68,7 @@ def api():
 @app.route('/')
 def index():
     return flask.render_template("index.htm")
-app.run(host='0.0.0.0', port=105)
+app.run(host='0.0.0.0', port=os.environ.get("PORT"))
 
 
 
