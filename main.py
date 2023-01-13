@@ -12,6 +12,7 @@ try:
     filedb = open("jsondb.json", 'r+') 
 except:
     filedb = open("jsondb.json", "x")
+    filedb.write("{}")
 
 jsoncache = json.load(filedb)
 
