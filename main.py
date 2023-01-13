@@ -7,7 +7,11 @@ jsoncache = {}
 app = flask.Flask("SocialCreditSystem") 
 
 # read file
-filedb = open("jsondb.json", 'r+') 
+try:
+    filedb = open("jsondb.json", 'r+') 
+except:
+    filedb = open("jsondb.json", "x")
+
 jsoncache = json.load(filedb)
 
 def commit(student, datatype, data):
