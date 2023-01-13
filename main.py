@@ -69,7 +69,7 @@ def api():
 @app.route('/')
 def index():
     return flask.render_template("index.htm")
-app.run(host='0.0.0.0', port=os.environ.get("PORT"))
+app.run(host='0.0.0.0', port=os.getenv("PORT"))
 
 
 
